@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	<script src="js/jquery/jquery-2.1.1.min.js"></script>
+	</head>
+	
+	<body>
+	
+		<select id="page"></select>
+		<input type="button" id="btnShowAndHide" value="Hide"/>
+		<div id="hashtag-show"></div>
+		<div id="twitter"></div>
+		
+		<!-- Javascript Codes -->
+		<script src="js/json/twitterData/new_twitter_data.json"></script>
+		<script src="js/json/corpus.json"></script>
+		<script src="js/Highcharts/highcharts.js"></script>
+		<script src="js/Highcharts/modules/exporting.js"></script>
+		<script src="js/Porter2-Stemmer-master/PorterStemmer2.min.js"></script>
+		<script src="js/twitter.businessobject.js"></script>
+		<script src="js/twitter.businesslogic.js"></script>
+		<script>
+			$(document).ready(function(){
+				generateNumberOfPages(20);
+				//clue: use parent nodes that DOES NOT dynamically change
+				$( "#twitter" ).on("click", "a.twitter-hashtag", function() {
+					generateNumberOfPagesForHash(20,$(this).text());
+				});				
+				$('#btnShowAndHide').click(showAndHideTableColumn);
+			});
+			
+			function showAndHideTableColumn(){
+				var btnValue = $(this).attr("value");
+				if(btnValue == "Hide"){
+					$('td:nth-child(2)').hide();
+					$("#btnShowAndHide").prop('value', 'Show');
+				} else {
+					$('td:nth-child(2)').show();
+					$("#btnShowAndHide").prop('value', 'Hide');
+				}	
+                // if your table has header(th), use this
+                //$('td:nth-child(2),th:nth-child(2)').hide();		
+			}
+			
+			function alertLinkText(){ // the elements that trigger change
+				$("#hashtag-show").html($(this).text());
+			}			
+		</script>
+	</body>
+</html>

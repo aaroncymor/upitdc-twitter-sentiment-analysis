@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	<script src="js/jquery/jquery-2.1.1.min.js"></script>
+	</head>
+	
+	<body>
+	
+		<div id="word-bar-graph-container"></div>
+		
+		<!-- Javascript Codes -->
+		<script src="js/json/twitterData/new_twitter_data.json"></script>
+		<script src="js/json/corpus.json"></script>
+		<script src="js/Highcharts/highcharts.js"></script>
+		<script src="js/Highcharts/modules/exporting.js"></script>
+		<script src="js/Porter2-Stemmer-master/PorterStemmer2.min.js"></script>
+		<script src="js/word.class.js"></script>
+		<script src="js/twitter.businessobject.js"></script>
+		<script src="js/twitter.businesslogic.js"></script>
+		<script>
+			$(document).ready(function(){
+				drawWordBarGraph();
+			});
+		</script>
+	</body>
+</html>
