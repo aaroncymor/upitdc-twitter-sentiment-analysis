@@ -20,3 +20,6 @@
 	
 	With high maps:
 		>highlight the top 10 happiest countries
+
+## Sources Not Included
+	js/json/twitterData/new_twitter_data.json
